@@ -20,6 +20,13 @@ class IndexController {
         $this->view->show("indexView.php",$data);
     }// mostrar
     
+    public function logIn(){
+        require 'model/IndexModel.php';
+        $indexModel = new IndexModel(); 
+        $data['logInfo']= $indexModel ->logIn($_POST['nombreUsuario'], $_POST['contraseniaUsuario']);
+        
+        $this->view->show("menuView.php",$data);
+    }//logIn
     
 }//fin clase
 

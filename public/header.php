@@ -10,14 +10,26 @@
     </head>
     <body>
         <header>
-            <h1><a href="?controlador=Index"><img src="public/img/logo.png" alt=""/></a></h1>
-            
-            <nav>
-                <ul>
-                    <li><a href="?controlador=Index">Inicio</a></li>
-                    <li><a href="?controlador=Producto&accion=mostrar">Registrar Producto</a></li>
+            <nav class="navegacion">
+                <ul class="menu">
+                    <li><a href="?controlador=Index">Usuarios</a>
+                        <ul class="submenu">
+                            <li><a href="">Crear usuario</a></li>
+                            <li><a href="">Permisos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Reportes</a>
+                        <ul class="submenu">
+                            <li><a href="">Customer_Accounts</a></li>
+                            <li><a href="">Transacciones</a></li>
+                            <li><a href="">Usuarios</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
+            <!-- 
+            <h1><a href="?controlador=Index"><img class="logoUCR" src="public/img/ucr.png" alt=""/></a></h1>
+            -->
         </header>
 
         <section id="contenido">
