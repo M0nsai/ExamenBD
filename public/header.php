@@ -6,23 +6,23 @@
         <meta name="description" content="Este es un ejemplo de pagina web">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
-        <link href="public/css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="./public/css/estilo.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body>
+    <body id="bodyLogin">
         <header>
             <nav class="navegacion">
                 <ul class="menu">
-                    <li><a href="?controlador=Index">Usuarios</a>
+                    <li><a >Usuarios</a>
                         <ul class="submenu">
-                            <li><a href="">Crear usuario</a></li>
-                            <li><a href="">Permisos</a></li>
+                            <li><a href="?controlador=Usuario&accion=mostrarCrearUsuario">Crear usuario</a></li>
+                            <li><a href="?controlador=Usuario&accion=mostrarAdministrarPermiso">Administrar Permisos</a></li>
                         </ul>
                     </li>
-                    <li><a href="">Reportes</a>
+                    <li><a >Reportes</a>
                         <ul class="submenu">
-                            <li><a href="">Customer_Accounts</a></li>
-                            <li><a href="">Transacciones</a></li>
-                            <li><a href="">Usuarios</a></li>
+                            <li><a href="?controlador=Reporte&accion=mostrarCustomerAccounts">Customer_Accounts</a></li>
+                            <li><a href="?controlador=Reporte&accion=mostrarTransacciones">Transacciones</a></li>
+                            <li><a href="?controlador=Reporte&accion=mostrarReporteUsuarios">Usuarios</a></li>
                         </ul>
                     </li>
                 </ul>

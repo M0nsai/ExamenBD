@@ -1,7 +1,7 @@
         </section>
         </section>
-        <footer>
-                Ejemplo HTML5, CSS3 y JavaScript
+        <footer >
+                IF5100 Examen I B83364 -   
         </footer>
     </body>
 
