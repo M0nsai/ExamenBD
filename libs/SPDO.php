@@ -13,7 +13,6 @@ class SPDO extends PDO{
         $config = Config::getInstance();
         parent::__construct('sqlsrv:Server='.$config->get('dbhost').';database='.$config->get('dbname'),
         $_SESSION["usuario"], $_SESSION["contrasenia"]);
-        echo "conexion completada";
     }//constructor
 
 

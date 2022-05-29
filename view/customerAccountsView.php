@@ -24,29 +24,25 @@
         <div class="tableContainer">
             <table class="tableCustomerAccount">
                 <tr>
-                    <th>ID Transaccion</th>
-                    <th>Cliente</th>
-                    <th>Tipo Transaccion</th>
-                    <th>Customer</th>
-                    <th>Monto</th>
-                    <th>Forma Pago</th>
-                    <th>Moneda</th>
-                    <th>Fecha</th>
+                    <th>Customer Account ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Nombre Cliente</th>
+                    <th>Eliminado</th>
+                    <th>Fecha de Registro</th>
                 </tr>
                 <?php 
-                if(isset($vars['cargarReporteTransaccion' ])){
+                if(isset($vars['cargarReporteCustomerAccounts' ])){
                 //print_r($vars['listado']);
-                    foreach($vars['cargarReporteTransaccion' ]as $reporte){
+                    foreach($vars['cargarReporteCustomerAccounts' ]as $reporte){
                 ?>
                 <tr>
                     <td><?php echo $reporte[0] ?></td>
+                    <td><?php echo $reporte[2]  ?></td>
+                    <td><?php echo $reporte[3] ?></td>
                     <td><?php echo $reporte[1]  ?></td>
-                    <td><?php echo $reporte[2] ?></td>
-                    <td><?php echo $reporte[3]  ?></td>
                     <td><?php echo $reporte[4]  ?></td>
-                    <td><?php echo $reporte[5] ?></td>
-                    <td><?php echo $reporte[6] ?></td>
-                    <td><?php echo $reporte[7] ?></td>
+                    <td><?php echo $reporte[4] ?></td>
                 </tr>
                 <?php 
                     }
