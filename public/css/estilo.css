@@ -249,3 +249,12 @@ footer {
     width: 96.5%;
     height: 20%;
 }
+
+.checkbox{
+    display: flex;
+    flex-direction: row;
+}
+
+.checkboxPermisos h1 label{
+    margin: 1em;
+}

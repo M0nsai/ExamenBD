@@ -4,7 +4,7 @@
         <form action="?controlador=Usuario&accion=cargarPermisosUsuario" method="post" id="formConsultarPermisoUsuario">
             
             <div>
-                <h1>ConsultaPermisos de Usuario</h1>
+                <h1>Consulta Permisos de Usuario</h1>
                 <input class="inputPermisoUsuario" type="text" name="consultaNombreUsuario" placeholder="Nombre de usuario" required/>
                 <input  id="consultarPermisoUsuario" type="submit" value="Consultar"/>
             </div>
@@ -14,12 +14,12 @@
 
         <form action="?controlador=Usuario&accion=editarPermisosUsuario" method="post" id="formEditarPermisoUsuario">
             
-            <div>
+            <div class="checkboxPermisos">
                 <h1>Permisos de Usuario</h1>
                 <input name="editarPermisoNombreUsuario" value="<?php if(isset( $vars ['cargarPermisosUsuario' ])){
                         $permisos=$vars ['cargarPermisosUsuario' ][0];
                         echo $permisos[0];
-                    } ?>"></input>
+                    } ?>" readonly>
                 <?php 
                     
                    
