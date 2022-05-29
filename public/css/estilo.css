@@ -121,3 +121,131 @@ footer {
     margin-bottom: 10%;
 }
 
+/*Registro usuario*/
+
+#formRegistroUsuario{
+    display: flex;
+    width: 40%;
+    height: 40%;
+    flex-direction: row;
+    position: absolute;
+    right: 55%;
+    background-color: #ffffff;
+    top: 25%;
+    padding: 1em;
+    border-radius: 1em;    
+}
+
+#formRegistroUsuario h1{
+    font-size: 2em;
+}
+
+#formRegistroUsuario p{
+    font-weight: bold;
+}
+
+.inputRegistroUsuario{
+    margin-top: 2em;
+    margin-bottom: 1em;
+    width: 90%;
+    height: 10%;
+    padding: 0.6em;
+    outline: 0;
+    border-radius: 0.5em;
+    border: 1px solid #ACD7F2;
+    
+}
+
+#buttonRegistroUsuario{
+    margin-top: 2em;
+    outline: 0;
+    border: 0;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    background-color: #173F73;
+    color: #ffffff;
+    font-size: 1em;
+    width: 96.5%;
+    height: 20%;
+}
+
+#imagenUsuario{
+    display: flex;
+    margin-top: 5%;
+    width: 90%;
+
+}
+
+/*Seleccion de permisos*/
+
+#formConsultarPermisoUsuario{
+    display: flex;
+    width: 15%;
+    height: 40%;
+    flex-direction: row;
+    position: absolute;
+    right: 75%;
+    background-color: #ffffff;
+    top: 25%;
+    padding: 1em;
+    border-radius: 1em;    
+}
+
+#formEditarPermisoUsuario{
+    display: flex;
+    width: 40%;
+    height: 40%;
+    flex-direction: row;
+    position: absolute;
+    right: 20%;
+    background-color: #ffffff;
+    top: 25%;
+    padding: 1em;
+    border-radius: 1em;    
+}
+
+.checkbox{
+    display:flex;
+    flex-direction: column;
+}
+
+.inputPermisoUsuario{
+    margin-top: 2em;
+    margin-bottom: 1em;
+    width: 90%;
+    height: 10%;
+    padding: 0.6em;
+    outline: 0;
+    border-radius: 0.5em;
+    border: 1px solid #ACD7F2;
+    
+}
+
+
+
+
+#consultarPermisoUsuario{
+    margin-top: 2em;
+    outline: 0;
+    border: 0;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    background-color: #173F73;
+    color: #ffffff;
+    font-size: 1em;
+    width: 96.5%;
+    height: 20%;
+}
+
+#buttonPermisoUsuario{
+    margin-top: 2em;
+    outline: 0;
+    border: 0;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    background-color: #173F73;
+    color: #ffffff;
+    font-size: 1em;
+    width: 96.5%;
+    height: 20%;
+}
