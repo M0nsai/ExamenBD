@@ -36,8 +36,9 @@
                         <th>Crear Usuarios</th>
                     </tr>
                     <?php 
+                    if(isset($vars['cargarReporteUsuario' ])){
                     //print_r($vars['listado']);
-                    foreach($vars['cargarReporteUsuario' ]as $reporte){
+                        foreach($vars['cargarReporteUsuario' ]as $reporte){
                     ?>
                     <tr>
                         <td><?php echo $reporte[0] ?></td>
@@ -49,6 +50,7 @@
                         <td><?php if($reporte[6]){echo 'Si';}else{echo 'No';} ?></td>
                     </tr>
                     <?php 
+                        }
                     }
                     ?>
                 </table>

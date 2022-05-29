@@ -1,7 +1,7 @@
 <?php
     include './public/header.php';
 ?>
-    <form action="?controlador=Reporte&accion=" method="post" id="formReporteTransacciones">
+    <form action="?controlador=Reporte&accion=reporteTransacciones" method="post" id="formReporteTransacciones">
         
         <h1>Reporte Transacciones</h1>
         <div>
@@ -25,6 +25,7 @@
             </div>
             <input class="inputReporteTransacciones" type="date" name="fechaCreacionInicioReporteT"  /> Fecha Transaccion Inicio
             <input class="inputReporteTransacciones" type="date" name="fechaCreacionFinReporteT"  /> Fecha Transaccion Fin
+            <input  id="buttonReporteTransacciones" type="submit" value="Filtrar"/>
         </div>
         
             
