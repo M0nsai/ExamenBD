@@ -10,7 +10,25 @@ class ReporteModel{
     }//constructor
 
     public function reporteUsuarios($nombreReporteU,$permTransaccionReporteU,$permCustomersReporteU,$permUsersReporteU,$permEncryptReporteU,$permActivoReporteU){
-        $consulta= $this->db->prepare("EXECUTE dbo.sp_Reporte_Usuarios @param_Nombre_Usuario='".$nombreReporteU."',@param_Perm_Transacciones='".$permTransaccionReporteU."',@param_Perm_Customers='".$permCustomersReporteU."',@param_Perm_Users='".$permUsersReporteU."',@param_Perm_Encript='".$permEncryptReporteU."',@param_Activos_Inactivos='".$permActivoReporteU."'");
+        $consulta= $this->db->prepare("
+        DECLARE @RC int
+        DECLARE @param_Nombre_Usuario varchar(50) = ".$nombreReporteU."
+        DECLARE @param_Perm_Transacciones bit = ".$permTransaccionReporteU."
+        DECLARE @param_Perm_Customers bit = ".$permCustomersReporteU."
+        DECLARE @param_Perm_Users bit = ".$permUsersReporteU."
+        DECLARE @param_Perm_Encript bit = ".$permEncryptReporteU."
+        DECLARE @param_Activos_Inactivos bit = ".$permActivoReporteU."
+
+        -- TODO: Set parameter values here.
+
+        EXECUTE @RC = [dbo].[sp_Reporte_Usuarios] 
+        @param_Nombre_Usuario
+        ,@param_Perm_Transacciones
+        ,@param_Perm_Customers
+        ,@param_Perm_Users
+        ,@param_Perm_Encript
+        ,@param_Activos_Inactivos
+        ");
         $consulta->execute();
         $resultado= $consulta->fetchAll();
         $consulta->closeCursor();
@@ -18,7 +36,6 @@ class ReporteModel{
     }
 
     public function reporteTransacciones($fechaInicioTransaccion,$fechaFinTransaccion,$montoTransaccion,$montoMMI,$idTransaccion,$moneda,$tipoPago,$customerAccountID,$cliente){
-        //$consulta= $this->db->prepare("EXECUTE dbo.sp_Reporte_Transacciones @param_Fecha_inicio_de_la_transacción='".$fechaInicioTransaccion."',@param_Fecha_fin_de_la_transacción='".$fechaFinTransaccion."',@param_Monto_de_la_transacción='".$montoTransaccion."',@param_Monto_MMI=".$montoMMI.",@param_Id_de_la_transacción=".$idTransaccion.",@param_Moneda='".$moneda."',@param_Tipo_de_pago='".$tipoPago."',@param_CustomerAccountId=".$customerAccountID.",@param_Cliente=".$cliente);
         $consulta= $this->db->prepare("
         DECLARE @RC int
         DECLARE @param_Fecha_inicio_de_la_transacción varchar(20) = ".$fechaInicioTransaccion."
@@ -50,8 +67,40 @@ class ReporteModel{
 
     }
 
-    public function reporteCustomerAccount(){
-        
+    public function reporteCustomerAccount($fechaCreacionInicioReporteCA,$fechaCreacionFinReporteCA,
+        $customerAccountBorradoReporte,$clienteReporteCA,$telefonoReporteCA,$direccionReporteCA,$tarjetaCreditoReporteCA,$nombreReporteCA,$apellidoReporteCA,$customerAccountIDReporteCA){
+            $consulta= $this->db->prepare("
+            DECLARE @RC int
+            DECLARE @param_Fecha_de_creacion_inici varchar(20) =".$fechaCreacionInicioReporteCA."
+            DECLARE @param_Fecha_de_creacion_fin varchar(20) =".$fechaCreacionFinReporteCA."
+            DECLARE @param_Customers_eliminados bit =". $customerAccountBorradoReporte."
+            DECLARE @param_Cliente_al_que_pertenecen varchar(20) =".$clienteReporteCA."
+            DECLARE @param_Telefono varchar(15) =".$telefonoReporteCA."
+            DECLARE @param_Dirección varchar(200) =".$direccionReporteCA."
+            DECLARE @param_Tarjeta_de_credito varchar(16) =".$tarjetaCreditoReporteCA."
+            DECLARE @param_Nombre varchar(25) =".$nombreReporteCA."
+            DECLARE @param_Apellido varchar(25) =".$apellidoReporteCA."
+            DECLARE @param_CustomerAccountId int =".$customerAccountIDReporteCA."
+
+            -- TODO: Set parameter values here.
+
+            EXECUTE @RC = [dbo].[sp_Reporte_Customers] 
+            @param_Fecha_de_creacion_inici
+            ,@param_Fecha_de_creacion_fin
+            ,@param_Customers_eliminados
+            ,@param_Cliente_al_que_pertenecen
+            ,@param_Telefono
+            ,@param_Dirección
+            ,@param_Tarjeta_de_credito
+            ,@param_Nombre
+            ,@param_Apellido
+            ,@param_CustomerAccountId
+    
+            ");
+            $consulta->execute();
+            $resultado= $consulta->fetchAll();
+            $consulta->closeCursor();
+            return $resultado;
     }
 
 }

@@ -22,36 +22,44 @@ class ReporteController {
         session_start();
         require 'model/ReporteModel.php';
         $reporteModel = new ReporteModel();
+       
+        if($_POST['nombreReporteU']==''){
+           
+            $nombreReporteU = 'null';
+        }else{
+            $nombreReporteU = "'".$_POST['nombreReporteU']."'";
+        }
+
         if(isset($_POST['permTransaccionReporteU'])){
             $permTransaccionReporteU = 1;
         }else{
-            $permTransaccionReporteU = 0;
+            $permTransaccionReporteU = 'null';
         }
 
         if(isset($_POST['permCustomersReporteU'])){
             $permCustomersReporteU = 1;
         }else{
-            $permCustomersReporteU = 0;
+            $permCustomersReporteU = 'null';
         }
 
         if(isset($_POST['permUsersReporteU'])){
             $permUsersReporteU = 1;
         }else{
-            $permUsersReporteU = 0;
+            $permUsersReporteU = 'null';
         }
         
         if(isset($_POST['permEncryptReporteU'])){
             $permEncryptReporteU = 1;
         }else{
-            $permEncryptReporteU = 0;
+            $permEncryptReporteU = 'null';
         }
         
         if(isset($_POST['permActivoReporteU'])){
             $permActivoReporteU = 1;
         }else{
-            $permActivoReporteU = 0;
+            $permActivoReporteU = 'null';
         }
-        $data['cargarReporteUsuario']=$reporteModel->reporteUsuarios($_POST['nombreReporteU'],$permTransaccionReporteU,$permCustomersReporteU,$permUsersReporteU,$permEncryptReporteU,$permActivoReporteU);
+        $data['cargarReporteUsuario']=$reporteModel->reporteUsuarios($nombreReporteU,$permTransaccionReporteU,$permCustomersReporteU,$permUsersReporteU,$permEncryptReporteU,$permActivoReporteU);
         $this->view->show("reporteUsuariosView.php",$data);
         
     }
@@ -131,7 +139,6 @@ class ReporteController {
             $clientIDReporte
         );
         $aux = $data['cargarReporteTransaccion'][0];
-        echo $aux[0];
 
         $this->view->show("transaccionesView.php",$data);
 
@@ -139,7 +146,74 @@ class ReporteController {
     }
 
     public function reporteCustomerAccount(){
+        session_start();
+        require 'model/ReporteModel.php';
+        $reporteModel = new ReporteModel();
+
+        if($_POST['customerAccountIDReporteCA']==''){
+            $customerAccountIDReporteCA = 'null';
+        }else{
+            $customerAccountIDReporteCA = $_POST['customerAccountIDReporteCA'];
+        }
+
+        if($_POST['nombreReporteCA']==''){
+            $nombreReporteCA = 'null';
+        }else{
+            $nombreReporteCA = "'".$_POST['nombreReporteCA']."'";
+        }
+
+        if($_POST['apellidoReporteCA']==''){
+            $apellidoReporteCA = 'null';
+        }else{
+            $apellidoReporteCA = "'".$_POST['apellidoReporteCA']."'";
+        }
+
+        if($_POST['tarjetaCreditoReporteCA']==''){
+            $tarjetaCreditoReporteCA = 'null';
+        }else{
+            $tarjetaCreditoReporteCA = "'".$_POST['tarjetaCreditoReporteCA']."'";
+        }
+
+        if($_POST['direccionReporteCA']==''){
+            $direccionReporteCA = 'null';
+        }else{
+            $direccionReporteCA = "'".$_POST['direccionReporteCA']."'";
+        }
+
+        if($_POST['telefonoReporteCA']==''){
+            $telefonoReporteCA = 'null';
+        }else{
+            $telefonoReporteCA = "'".$_POST['telefonoReporteCA']."'";
+        }
         
+        if($_POST['clienteReporteCA']==''){
+            $clienteReporteCA = 'null';
+        }else{
+            $clienteReporteCA = "'".$_POST['clienteReporteCA']."'";
+        }
+
+        if(isset($_POST['customerAccountBorradoReporte'])){
+            $customerAccountBorradoReporte = 1;
+        }else{
+            $customerAccountBorradoReporte = 'null';
+        }
+
+        if($_POST['fechaCreacionInicioReporteCA']==''){
+            $fechaCreacionInicioReporteCA = 'null';
+        }else{
+            $fechaCreacionInicioReporteCA = "'".$_POST['fechaCreacionInicioReporteCA']."'";
+        }
+
+        if($_POST['fechaCreacionFinReporteCA']==''){
+            $fechaCreacionFinReporteCA = 'null';
+        }else{
+            $fechaCreacionFinReporteCA = "'".$_POST['fechaCreacionFinReporteCA']."'";
+        }
+
+        $data['cargarReporteCustomerAccounts']=$reporteModel->reporteCustomerAccount($fechaCreacionInicioReporteCA,$fechaCreacionFinReporteCA,
+                    $customerAccountBorradoReporte,$clienteReporteCA,$telefonoReporteCA,$direccionReporteCA,$tarjetaCreditoReporteCA,$nombreReporteCA,$apellidoReporteCA,$customerAccountIDReporteCA);
+        $this->view->show("customerAccountsView.php",$data);
+
     }
 
 }
