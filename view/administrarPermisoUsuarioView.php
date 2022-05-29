@@ -66,6 +66,7 @@
                    
                
             </div>
+            <div> <img id="imagenPermisos" src="./public/img/permisos.png" alt="permisos"></div>
            
             
         </form> 

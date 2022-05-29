@@ -42,7 +42,7 @@
                     <td><?php echo $reporte[3] ?></td>
                     <td><?php echo $reporte[1]  ?></td>
                     <td><?php echo $reporte[4]  ?></td>
-                    <td><?php echo $reporte[4] ?></td>
+                    <td><?php echo $reporte[5] ?></td>
                 </tr>
                 <?php 
                     }

@@ -204,6 +204,10 @@ footer {
     border-radius: 1em;    
 }
 
+#formEditarPermisoUsuario .checkboxPermisos{
+    width: 40%;
+}
+
 .checkbox{
     display:flex;
     flex-direction: column;
@@ -253,8 +257,39 @@ footer {
 .checkbox{
     display: flex;
     flex-direction: row;
+    /* margin-bottom: 1em; */
+   
 }
 
-.checkboxPermisos h1 label{
-    margin: 1em;
+.checkboxPermisos input{
+    margin-right: 10%;
 }
+
+.checkboxPermisos h1{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.checkboxPermisos input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    cursor: pointer;
+    height: 1em;
+}
+
+#buttonPermisoUsuario{
+    height: 3em;
+}
+
+#imagenPermisos{
+    display: flex;
+    margin-top: 0%;
+    margin-left: 30%;
+    width: 70%;
+
+}
+
+/* Reportes */
+/* Reporte Customer Account */
