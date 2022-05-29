@@ -14,6 +14,63 @@ class UsuarioController {
         $this->view->show("administrarPermisoUsuarioView.php",null);
     }// mostrar
 
+    public function registrarUsuario(){
+
+        session_start();
+        require 'model/UsuarioModel.php';
+        $usuarioModel = new UsuarioModel();
+        $usuarioModel ->registrarUsuario($_POST['nombreCrearUsuario'], $_POST['contraseniaCrearUsuario']);
+
+        $this->view->show("menuView.php",$data);
+    }//registrarUsuairo
+
+    public function cargarPermisosUsuario(){
+        session_start();
+        require 'model/UsuarioModel.php';
+        $usuarioModel = new UsuarioModel();
+        $data['cargarPermisosUsuario']=$usuarioModel->cargarPermisosUsuario($_POST['consultaNombreUsuario']);
+        $this->view->show("administrarPermisoUsuarioView.php",$data);
+    }
+
+    public function editarPermisosUsuario(){
+        session_start();
+        require 'model/UsuarioModel.php';
+        $usuarioModel = new UsuarioModel();
+        if(isset($_POST['permTransacciones'])){
+            $permTransacciones = 1;
+        }else{
+            $permTransacciones = 0;
+        }
+
+        if(isset($_POST['permCustomers'])){
+            $permCustomers = 1;
+        }else{
+            $permCustomers = 0;
+        }
+        if(isset($_POST['permUsers'])){
+            $permUsers = 1;
+        }else{
+            $permUsers = 0;
+        }
+
+
+        if(isset($_POST['permEncrypt'])){
+            $permEncrypt = 1;
+        }else{
+            $permEncrypt = 0;
+        }
+        
+
+        if(isset($_POST['permCreateUsers'])){
+            $permCreateUsers = 1;
+        }else{
+            $permCreateUsers = 0;
+        }
+
+        $usuarioModel->editarPermisosUsuario($_POST['editarPermisoNombreUsuario'], $permTransacciones,$permCustomers,$permUsers,$permCreateUsers, $permEncrypt);
+
+        $this->view->show("menuView.php",null);
+    }
 
 
 }

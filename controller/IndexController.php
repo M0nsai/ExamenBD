@@ -21,12 +21,18 @@ class IndexController {
     }// mostrar
     
     public function logIn(){
+        //inicia una sesion
+        session_start();
+        $_SESSION["usuario"] = $_POST['nombreUsuario'];
+        $_SESSION["contrasenia"] = $_POST['contraseniaUsuario'];
+
         require 'model/IndexModel.php';
         $indexModel = new IndexModel(); 
-        $data['logInfo']= $indexModel ->logIn($_POST['nombreUsuario'], $_POST['contraseniaUsuario']);
-        
-        $this->view->show("menuView.php",$data);
+        $indexModel ->logIn();
+        $this->view->show("menuView.php",null);
     }//logIn
+
+   
     
 }//fin clase
 

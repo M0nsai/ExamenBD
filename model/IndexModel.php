@@ -2,13 +2,16 @@
 
 class IndexModel {
 
+    private $db;
+
     public function __construct() {
-        require 'libs/SPDO.php';
-        $this->db= SPDO::getInstance();
+        
     }//constructor
 
-    public function logIn($usuario, $contrasenia){
-        return $usuario." ".$contrasenia;
+    public function logIn(){
+        require 'libs/SPDO.php';
+        $this->db= SPDO::getInstance();
+        
     }
 
 }//fin clase
