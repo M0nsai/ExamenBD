@@ -28,37 +28,42 @@
             <input  id="buttonReporteTransacciones" type="submit" value="Filtrar"/>
         </div>
         
-        <div class="tableContainer">
-                <table class="tableTransacciones">
-                    <tr>
-                        <th>ID Transaccion</th>
-                        <th>Cliente</th>
-                        <th>Tipo Transaccion</th>
-                        <th>Customer</th>
-                        <th>Monto</th>
-                        <th>Forma Pago</th>
-                        <th>Moneda</th>
-                        <th>Fecha</th>
-                    </tr>
-                    <?php 
-                    if(isset($vars['cargarReporteTransaccion' ])){
-                    //print_r($vars['listado']);
-                        foreach($vars['cargarReporteTransaccion' ]as $reporte){
-                    ?>
-                    <tr>
-                        <td><?php echo $reporte[0] ?></td>
-                        <td><?php echo $reporte[1]  ?></td>
-                        <td><?php echo $reporte[2] ?></td>
-                        <td><?php echo $reporte[3]  ?></td>
-                        <td><?php echo $reporte[4]  ?></td>
-                        <td><?php echo $reporte[5] ?></td>
-                        <td><?php echo $reporte[6] ?></td>
-                        <td><?php echo $reporte[7] ?></td>
-                    </tr>
-                    <?php 
+        <div class="tableContainerTransacciones">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="sticky">ID Transaccion</th>
+                            <th class="sticky">Cliente</th>
+                            <th class="sticky">Tipo Transaccion</th>
+                            <th class="sticky">Customer</th>
+                            <th class="sticky">Monto</th>
+                            <th class="sticky">Forma Pago</th>
+                            <th class="sticky">Moneda</th>
+                            <th class="sticky">Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
+                        if(isset($vars['cargarReporteTransaccion' ])){
+                        //print_r($vars['listado']);
+                            foreach($vars['cargarReporteTransaccion' ]as $reporte){
+                        ?>
+                        <tr>
+                            <td><?php echo $reporte[0] ?></td>
+                            <td><?php echo $reporte[1]  ?></td>
+                            <td><?php echo $reporte[2] ?></td>
+                            <td><?php echo $reporte[3]  ?></td>
+                            <td><?php echo $reporte[4]  ?></td>
+                            <td><?php echo $reporte[5] ?></td>
+                            <td><?php echo $reporte[6] ?></td>
+                            <td><?php echo $reporte[7] ?></td>
+                        </tr>
+                        <?php 
+                            }
                         }
-                    }
-                    ?>
+                        ?>
+                    </tbody>
+                   
                 </table>
         </div>
             

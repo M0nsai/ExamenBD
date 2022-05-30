@@ -59,7 +59,18 @@ class ReporteController {
         }else{
             $permActivoReporteU = 'null';
         }
-        $data['cargarReporteUsuario']=$reporteModel->reporteUsuarios($nombreReporteU,$permTransaccionReporteU,$permCustomersReporteU,$permUsersReporteU,$permEncryptReporteU,$permActivoReporteU);
+
+        if(isset($_POST['permCrearUsuarioReporteU'])){
+
+            $permCrearUsuarioReporteU = 1;
+        }else{
+            
+            $permCrearUsuarioReporteU = 'null';
+        }
+
+        
+
+        $data['cargarReporteUsuario']=$reporteModel->reporteUsuarios($nombreReporteU,$permTransaccionReporteU,$permCustomersReporteU,$permUsersReporteU,$permEncryptReporteU,$permActivoReporteU,$permCrearUsuarioReporteU);
         $this->view->show("reporteUsuariosView.php",$data);
         
     }
@@ -214,6 +225,23 @@ class ReporteController {
                     $customerAccountBorradoReporte,$clienteReporteCA,$telefonoReporteCA,$direccionReporteCA,$tarjetaCreditoReporteCA,$nombreReporteCA,$apellidoReporteCA,$customerAccountIDReporteCA);
         $this->view->show("customerAccountsView.php",$data);
 
+    }
+
+
+    public function reporteCustomerAccountTelefonos (){
+        session_start();
+        require 'model/ReporteModel.php';
+        $reporteModel = new ReporteModel();
+    }
+    public function reporteCustomerAccountDirecciones(){
+        session_start();
+        require 'model/ReporteModel.php';
+        $reporteModel = new ReporteModel();
+    }
+    public function reporteCustomerAccountTarjetaCredito(){
+        session_start();
+        require 'model/ReporteModel.php';
+        $reporteModel = new ReporteModel();
     }
 
 }

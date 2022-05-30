@@ -56,6 +56,19 @@
     
 }
 
+.navegacion #formLogOut{
+    display: inline-block;
+    width: 10%;
+    margin: auto;
+    background-color: #173F73;
+    
+    
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
 
 .navegacion ul{
     list-style: none;
@@ -293,3 +306,74 @@ footer {
 
 /* Reportes */
 /* Reporte Customer Account */
+
+.reporteCustomerAccount{
+    display: inline-block;
+    background-color: #ffffff;
+}
+
+
+
+.table{
+    border: solid;
+    border-spacing: 0;
+
+}
+
+.table thead th{
+    background-color: #173F73;
+    color: white;
+}
+
+.table th,
+.table td{
+    border-right: 1px solid #173F73;
+    min-width: 150px;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.table thead tr{
+    border-right: 1px solid #173F73;
+   background-color: #173F73;
+    color: #ffffff;
+}
+
+.table th, .table td{
+    border-right: 1px solid #173F73;
+}
+
+.table th:last-child,
+.table td:last-child{
+    border-right: 0;
+}
+
+.table td{
+   border-bottom:  1px solid #173F73;
+}
+
+.tableContainer{
+    max-height: 1%;
+    overflow-y: scroll;
+}
+
+.tableContainerUsarios{
+    max-height: 80%;
+    overflow-y: scroll;
+}
+
+.tableContainerTransacciones{
+    max-height: 0.5%;
+    overflow-y: scroll;
+}
+.table .sticky{
+    position:sticky;
+    top: 0;
+}
+
+.table tbody tr .sticky{
+    background-color: #173F73;
+}
+
+
+

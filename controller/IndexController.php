@@ -32,6 +32,10 @@ class IndexController {
         $this->view->show("menuView.php",null);
     }//logIn
 
+    public function logOut(){
+        session_unset();
+        $this->view->show("indexView.php",null);
+    }
    
     
 }//fin clase

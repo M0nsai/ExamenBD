@@ -24,6 +24,14 @@
                             <li><a href="?controlador=Reporte&accion=mostrarReporteUsuarios">Usuarios</a></li>
                         </ul>
                     </li>
+                    
+                    <!-- <li>
+                        <form action="?controlador=Index&accion=logOut" method="post" id="formLogOut">
+                            <input  id="logOut" type="submit" value="Cerrar Sesion"/>
+                        </from>
+                    </li> -->
+                    
+                    
                 </ul>
             </nav>
             <!-- 

@@ -21,38 +21,45 @@
             <div class="checkbox">
                 <input type="checkbox" name="permActivoReporteU" /><label>Activo</label>
             </div>
+            <div class="checkbox">
+                <input type="checkbox" name="permCrearUsuarioReporteU" /><label>Crear Usuarios</label>
+            </div>
             <input  id="buttonReporteUsuarios" type="submit" value="Filtrar"/>
         </div>
         
-        <div class="tableContainer">
-                <table class="tableUsuarios">
-                    <tr>
-                        <th>Nombre Usuario</th>
-                        <th>Reporte Transaccion</th>
-                        <th>Reporte Customers</th>
-                        <th>Reporte Usuarios</th>
-                        <th>Datos Encriptados</th>
-                        <th>Activo</th>
-                        <th>Crear Usuarios</th>
-                    </tr>
+        <div class="tableContainerUsarios">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre Usuario</th>
+                            <th>Reporte Transaccion</th>
+                            <th>Reporte Customers</th>
+                            <th>Reporte Usuarios</th>
+                            <th>Datos Encriptados</th>
+                            <th>Activo</th>
+                            <th>Crear Usuarios</th>
+                        </tr>
+                    </thead>
+                   <tbody>
                     <?php 
-                    if(isset($vars['cargarReporteUsuario' ])){
-                    //print_r($vars['listado']);
-                        foreach($vars['cargarReporteUsuario' ]as $reporte){
-                    ?>
-                    <tr>
-                        <td><?php echo $reporte[0] ?></td>
-                        <td><?php if($reporte[1]){echo 'Si';}else{echo 'No';}  ?></td>
-                        <td><?php if($reporte[2]){echo 'Si';}else{echo 'No';}  ?></td>
-                        <td><?php if($reporte[3]){echo 'Si';}else{echo 'No';}  ?></td>
-                        <td><?php if($reporte[4]){echo 'Si';}else{echo 'No';}  ?></td>
-                        <td><?php if($reporte[5]){echo 'Si';}else{echo 'No';}  ?></td>
-                        <td><?php if($reporte[6]){echo 'Si';}else{echo 'No';} ?></td>
-                    </tr>
-                    <?php 
-                        }
-                    }
-                    ?>
+                        if(isset($vars['cargarReporteUsuario' ])){
+                        //print_r($vars['listado']);
+                            foreach($vars['cargarReporteUsuario' ]as $reporte){
+                        ?>
+                        <tr>
+                            <td><?php echo $reporte[0] ?></td>
+                            <td><?php if($reporte[1]){echo 'Si';}else{echo 'No';}  ?></td>
+                            <td><?php if($reporte[2]){echo 'Si';}else{echo 'No';}  ?></td>
+                            <td><?php if($reporte[3]){echo 'Si';}else{echo 'No';}  ?></td>
+                            <td><?php if($reporte[4]){echo 'Si';}else{echo 'No';}  ?></td>
+                            <td><?php if($reporte[5]){echo 'Si';}else{echo 'No';}  ?></td>
+                            <td><?php if($reporte[6]){echo 'Si';}else{echo 'No';} ?></td>
+                        </tr>
+                        <?php 
+                                }
+                            }
+                        ?>
+                   </tbody>
                 </table>
         </div>
             

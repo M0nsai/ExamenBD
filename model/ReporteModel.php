@@ -9,7 +9,7 @@ class ReporteModel{
         $this->db= SPDO::getInstance();
     }//constructor
 
-    public function reporteUsuarios($nombreReporteU,$permTransaccionReporteU,$permCustomersReporteU,$permUsersReporteU,$permEncryptReporteU,$permActivoReporteU){
+    public function reporteUsuarios($nombreReporteU,$permTransaccionReporteU,$permCustomersReporteU,$permUsersReporteU,$permEncryptReporteU,$permActivoReporteU,$permCrearUsuarioReporteU){
         $consulta= $this->db->prepare("
         DECLARE @RC int
         DECLARE @param_Nombre_Usuario varchar(50) = ".$nombreReporteU."
@@ -17,6 +17,7 @@ class ReporteModel{
         DECLARE @param_Perm_Customers bit = ".$permCustomersReporteU."
         DECLARE @param_Perm_Users bit = ".$permUsersReporteU."
         DECLARE @param_Perm_Encript bit = ".$permEncryptReporteU."
+        DECLARE @param_Perm_CreUsers bit = ".$permCrearUsuarioReporteU."
         DECLARE @param_Activos_Inactivos bit = ".$permActivoReporteU."
 
         -- TODO: Set parameter values here.
@@ -27,6 +28,7 @@ class ReporteModel{
         ,@param_Perm_Customers
         ,@param_Perm_Users
         ,@param_Perm_Encript
+        ,@param_Perm_CreUsers
         ,@param_Activos_Inactivos
         ");
         $consulta->execute();
