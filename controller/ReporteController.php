@@ -228,21 +228,27 @@ class ReporteController {
     }
 
 
-    public function reporteCustomerAccountTelefonos (){
+    public function reporteCustomerAccountSubConsulta (){
         session_start();
         require 'model/ReporteModel.php';
         $reporteModel = new ReporteModel();
+        $id = $_GET['id'];
+        $action = $_GET['action'];
+        $data['cargarReporteCustomerAccountSubConsulta']=$reporteModel->reporteCustomerAccountSubConsulta($id, $action);
+        
+        if($action==1){
+            $data['action']= 'Telefono';
+        }else if($action==2){
+            $data['action']= 'Direccion';
+        }else if($action==3){
+            $data['action']= 'Tarjeta de Credito';
+        }
+        
+        $this->view->show("reporteCustomerAccountSubConsultaView.php",$data);
+        
+
     }
-    public function reporteCustomerAccountDirecciones(){
-        session_start();
-        require 'model/ReporteModel.php';
-        $reporteModel = new ReporteModel();
-    }
-    public function reporteCustomerAccountTarjetaCredito(){
-        session_start();
-        require 'model/ReporteModel.php';
-        $reporteModel = new ReporteModel();
-    }
+    
 
 }
 

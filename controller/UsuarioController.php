@@ -19,9 +19,14 @@ class UsuarioController {
         session_start();
         require 'model/UsuarioModel.php';
         $usuarioModel = new UsuarioModel();
-        $usuarioModel ->registrarUsuario($_POST['nombreCrearUsuario'], $_POST['contraseniaCrearUsuario']);
-
-        $this->view->show("menuView.php",$data);
+        $data['Mensaje']=$usuarioModel ->registrarUsuario($_POST['nombreCrearUsuario'], $_POST['contraseniaCrearUsuario']);   
+        
+        $this->view->show("crearUsuarioView.php",null);
+        if($data['Mensaje'][0][1]==1){
+            echo "<span > El usuario ya existe. </span>";
+        }else{
+            echo "<span> Usuario Registrado. </span>";
+        }
     }//registrarUsuairo
 
     public function cargarPermisosUsuario(){

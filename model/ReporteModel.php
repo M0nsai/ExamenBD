@@ -105,6 +105,24 @@ class ReporteModel{
             return $resultado;
     }
 
+    public function reporteCustomerAccountSubConsulta ($id, $action){
+        $consulta= $this->db->prepare("
+        DECLARE @RC int
+        DECLARE @param_CustID int = ".$id."
+        DECLARE @Action int = ".$action."
+
+        -- TODO: Set parameter values here.
+
+        EXECUTE @RC = [dbo].[sp_Customer_Datos] 
+        @param_CustID
+        ,@Action
+        ");
+        $consulta->execute();
+        $resultado= $consulta->fetchAll();
+        $consulta->closeCursor();
+        return $resultado;
+    }
+
 }
 
 ?>

@@ -12,7 +12,9 @@ class UsuarioModel {
     public function registrarUsuario($usuario, $contrasenia){
         $consulta= $this->db->prepare("EXEC dbo.sp_Creacion_Usuarios @param_Nombre_Usuario ='".$usuario."', @param_Contraseña = '".$contrasenia."'");
         $consulta->execute();
+        $resultado= $consulta->errorInfo();
         $consulta->closeCursor();
+        return $resultado;
     }
      
     public function cargarPermisosUsuario($usuario){

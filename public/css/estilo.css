@@ -312,6 +312,13 @@ footer {
     background-color: #ffffff;
 }
 
+.tableContainer{
+    background-color: #ACD7F2;
+}
+
+.tableContainerUsarios{
+    background-color: #ACD7F2;
+}
 
 
 .table{
@@ -353,7 +360,7 @@ footer {
 }
 
 .tableContainer{
-    max-height: 1%;
+    max-height: 10%;
     overflow-y: scroll;
 }
 

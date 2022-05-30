@@ -36,6 +36,10 @@ class IndexController {
         session_unset();
         $this->view->show("indexView.php",null);
     }
+
+    public function menu(){
+        $this->view->show("menuView.php",null);
+    }
    
     
 }//fin clase

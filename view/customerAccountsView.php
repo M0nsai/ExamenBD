@@ -31,6 +31,9 @@
                         <th class="sticky">Nombre Cliente</th>
                         <th class="sticky">Eliminado</th>
                         <th class="sticky">Fecha de Registro</th>
+                        <th class="sticky">Accion</th>
+                        <th class="sticky">Accion</th>
+                        <th class="sticky">Accion</th>
                     </tr>
                </thead>
                 <tbody>
@@ -46,6 +49,9 @@
                         <td><?php echo $reporte[1]  ?></td>
                         <td><?php echo $reporte[4]  ?></td>
                         <td><?php echo $reporte[5] ?></td>
+                        <td><a href="?controlador=Reporte&accion=reporteCustomerAccountSubConsulta&id=<?php echo $reporte[0] ?>&action=1">Telefono</a></td>
+                        <td><a href="?controlador=Reporte&accion=reporteCustomerAccountSubConsulta&id=<?php echo $reporte[0] ?>&action=2">Direcciones</a></td>
+                        <td><a href="?controlador=Reporte&accion=reporteCustomerAccountSubConsulta&id=<?php echo $reporte[0] ?>&action=3">TarjetaCredito</a></td>
                     </tr>
                     <?php 
                         }
@@ -57,15 +63,6 @@
         </div>
         
     </form> 
-    <form action="?controlador=Reporte&accion=reporteCustomerAccountTelefonos" method="post" id="formReporteCustomerAccountTelefonos">
-        <input id="botonTelefonos" type="submit" value="Telefonos">
-    </form> 
-    <form action="?controlador=Reporte&accion=reporteCustomerAccountDirecciones" method="post" id="formReporteCustomerAccountDirecciones">
-        <input id="botonDirecciones" type="submit" value="Direcciones">       
-    </form>
-    <form action="?controlador=Reporte&accion=reporteCustomerAccountTarjetaCredito" method="post" id="formReporteCustomerAccountTarjetaCredito">
-        <input id="botonTarjetaCredito" type="submit" value="Tarjeta Credito">
-    </form>
 
 <?php
     include_once './public/footer.php';

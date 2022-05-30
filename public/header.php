@@ -11,6 +11,7 @@
         <header>
             <nav class="navegacion">
                 <ul class="menu">
+                    <li><a href="?controlador=Index&accion=menu">Menu</a></li>
                     <li><a >Usuarios</a>
                         <ul class="submenu">
                             <li><a href="?controlador=Usuario&accion=mostrarCrearUsuario">Crear usuario</a></li>
@@ -25,11 +26,8 @@
                         </ul>
                     </li>
                     
-                    <!-- <li>
-                        <form action="?controlador=Index&accion=logOut" method="post" id="formLogOut">
-                            <input  id="logOut" type="submit" value="Cerrar Sesion"/>
-                        </from>
-                    </li> -->
+                    <li><a href="?controlador=Index&accion=logOut">Cerrar Sesion</a></li>
+
                     
                     
                 </ul>
