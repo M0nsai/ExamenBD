@@ -2,7 +2,7 @@
     include './public/header.php';
 ?>
     <form action="?controlador=Reporte&accion=reporteCustomerAccount" method="post" id="formReporteCustomerAccount">
-        
+        hola
         <h1>Reporte Customer Account</h1>
         <div class="reporteCustomerAccount">
             <h1>Customer ID</h1><input class="inputReporteCustomerAccount" type="text" name="customerAccountIDReporteCA" placeholder="Customer ID"/>
